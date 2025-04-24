@@ -1,8 +1,9 @@
 CREATE TABLE IF NOT EXISTS artista(
 	id INT PRIMARY KEY,
 	nombre VARCHAR(60) NOT NULL,
-	descripcion VARCHAR(5000),
-	fecha_formacion DATE NOT NULL
+	descripcion TEXT,
+	fecha_formacion DATE NOT NULL,
+	imagen TEXT
 );
 
 CREATE TABLE IF NOT EXISTS evento(
