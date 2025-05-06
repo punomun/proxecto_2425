@@ -1,16 +1,19 @@
 CREATE TABLE IF NOT EXISTS artista(
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(60) NOT NULL,
 	descripcion TEXT,
 	fecha_formacion DATE NOT NULL,
-	imagen TEXT
+	imagen TEXT,
+	icono TEXT
 );
 
 CREATE TABLE IF NOT EXISTS evento(
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(50) NOT NULL,
 	fecha DATE,
-	lugar VARCHAR(127)
+	lugar VARCHAR(127),
+	imagen TEXT,
+	icono TEXT
 );
 
 CREATE TABLE IF NOT EXISTS artista_evento(
