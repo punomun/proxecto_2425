@@ -22,28 +22,12 @@ public class Usuario {
 	@Column(name="contraseña")
 	private String contraseña;
     @Column(name="perfil")
-	private Perfil perfil;
+	private String perfil;
 
-    @Getter
-    enum Perfil {
-        ADMIN("admin"),
-        USUARIO("usuario");
-
-        private final String value;
-
-        Perfil(String value) {
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return value;
-        }
-    }
-
-    public Usuario(String nombre, String contraseña, Perfil perfil) {
+    public Usuario(String nombre, String contraseña, String perfil) {
         this.nombre = nombre;
         this.contraseña = contraseña;
+        if (!"admin".equalsIgnoreCase(perfil) && !"usuario".equalsIgnoreCase(perfil)) perfil = "usuario";
         this.perfil = perfil;
     }
 }
