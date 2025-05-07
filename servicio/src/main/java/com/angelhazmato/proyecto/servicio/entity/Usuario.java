@@ -1,4 +1,4 @@
-package com.angelhazmato.proyecto.servicio.entidad;
+package com.angelhazmato.proyecto.servicio.entity;
 
 
 import jakarta.persistence.*;
