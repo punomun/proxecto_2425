@@ -1,0 +1,41 @@
+package com.angelhazmato.proyecto.servicio.service;
+
+import com.angelhazmato.proyecto.servicio.dao.UsuarioRepository;
+import com.angelhazmato.proyecto.servicio.entity.Usuario;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class UsuarioServiceImpl implements UsuarioService {
+
+    private final UsuarioRepository usuarioRepository;
+
+    public UsuarioServiceImpl(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
+
+    @Override
+    public Usuario obtenerPorId(int id) {
+        return usuarioRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Usuario guardar(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
+
+    @Override
+    public boolean eliminarPorId(int id) {
+        if (id == 1 || !usuarioRepository.existsById(id)) return false;
+        usuarioRepository.deleteById(id);
+        return true;
+    }
+
+    @Override
+    public boolean eliminarPorNombre(String nombre) {
+        if (nombre == null || !usuarioRepository.existsByNombre(nombre)) return false;
+        usuarioRepository.deleteByNombre(nombre);
+        return true;
+    }
+}
