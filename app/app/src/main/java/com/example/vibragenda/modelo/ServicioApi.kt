@@ -66,4 +66,32 @@ object ServicioApi {
         }
         return evento
     }
+
+    fun obtenerArtistasDeEvento(idEvento: Int): List<Artista> {
+        var lista = ArrayList<Artista>()
+        val client = OkHttpClient()
+        val request = Request.Builder().url("$url/api/artistas/evento/$idEvento").build()
+        client.newCall(request).execute().use { response: Response ->
+            if (!response.isSuccessful) throw IOException("Unexpected code $response")
+
+            val responseData = response.body()!!.string()
+            val gson = Gson()
+            lista = gson.fromJson(responseData, object : TypeToken<List<Artista>>() {}.type)
+        }
+        return lista
+    }
+
+    fun obtenerEventosDeArtista(idArtista: Int): List<Evento> {
+        var lista = ArrayList<Evento>()
+        val client = OkHttpClient()
+        val request = Request.Builder().url("$url/api/eventos/artista/$idArtista").build()
+        client.newCall(request).execute().use { response: Response ->
+            if (!response.isSuccessful) throw IOException("Unexpected code $response")
+
+            val responseData = response.body()!!.string()
+            val gson = Gson()
+            lista = gson.fromJson(responseData, object : TypeToken<List<Evento>>() {}.type)
+        }
+        return lista
+    }
 }
