@@ -30,6 +30,13 @@ public class EventoRestController {
         return ResponseEntity.ok(evento);
     }
 
+    @GetMapping("/artista/{idArtista}")
+    public ResponseEntity<List<Evento>> getEventoByArtista(@PathVariable int idArtista) {
+        List<Evento> eventos = eventoService.obtenerPorIdArtista(idArtista);
+        if (eventos == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(eventos);
+    }
+
     @PostMapping
     public ResponseEntity<Evento> postEvento(@RequestBody Evento evento) {
         Evento nuevoEvento = eventoService.guardar(evento);
