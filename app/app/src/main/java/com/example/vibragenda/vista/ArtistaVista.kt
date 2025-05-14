@@ -2,8 +2,8 @@ package com.example.vibragenda.vista
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +31,9 @@ class ArtistaVista : AppCompatActivity() {
         val nombre = findViewById<TextView>(R.id.txtVwArtistaNombre)
         val desc = findViewById<TextView>(R.id.txtVwArtistaDesc)
         val fecha = findViewById<TextView>(R.id.txtVwArtistaFecha)
+        val spinner = findViewById<ProgressBar>(R.id.progressBar)
+
+        VistaUtils.ocultarDatos(spinner, img, nombre, desc, fecha)
 
         lifecycleScope.launch(Dispatchers.IO) {
             val artista = ServicioApi.obtenerArtista(intent.getIntExtra("ARTISTA_ID", 1))
@@ -46,6 +49,7 @@ class ArtistaVista : AppCompatActivity() {
                 nombre.text = artista.nombre
                 desc.text = artista.descripcion
                 fecha.text = artista.fechaFormacion
+                VistaUtils.mostrarDatos(spinner, img, nombre, desc, fecha)
             }
         }
 

@@ -2,6 +2,7 @@ package com.example.vibragenda.vista
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ProgressBar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +29,10 @@ class ArtistasVista : AppCompatActivity() {
         }
 
         val recyclerView = findViewById<RecyclerView>(R.id.rvListaArtistas)
+        val spinner = findViewById<ProgressBar>(R.id.progressBar)
+
+        VistaUtils.ocultarDatos(spinner, recyclerView)
+
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         lifecycleScope.launch(Dispatchers.IO) {
@@ -39,6 +44,7 @@ class ArtistasVista : AppCompatActivity() {
                     startActivity(intent)
                 }
                 recyclerView.adapter = artistaAdaptador
+                VistaUtils.mostrarDatos(spinner, recyclerView)
             }
         }
 
