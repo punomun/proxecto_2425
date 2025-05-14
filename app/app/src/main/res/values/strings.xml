@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Vibragenda</string>
+    <string name="artistas_confirmados_en_evento">Artistas confirmados</string>
+    <string name="no_hay_artistas_confirmados">No hay artistas confirmados</string>
 </resources>
