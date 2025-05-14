@@ -30,6 +30,13 @@ public class ArtistaRestController {
         return ResponseEntity.ok(artista);
     }
 
+    @GetMapping("/evento/{idEvento}")
+    public ResponseEntity<List<Artista >> getArtistaByEvento(@PathVariable int idEvento) {
+        List<Artista> artistas = artistaService.obtenerPorIdEvento(idEvento);
+        if (artistas == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(artistas);
+    }
+
     @PostMapping
     public ResponseEntity<Artista> postArtista(@RequestBody Artista artista) {
         Artista nuevoArtista = artistaService.guardar(artista);

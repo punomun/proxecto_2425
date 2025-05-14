@@ -26,6 +26,11 @@ public class ArtistaServiceImpl implements ArtistaService {
     }
 
     @Override
+    public List<Artista> obtenerPorIdEvento(int idEvento) {
+        return artistaRepository.findByEventosId(idEvento);
+    }
+
+    @Override
     public Artista guardar(Artista artista) {
         return artistaRepository.save(artista);
     }

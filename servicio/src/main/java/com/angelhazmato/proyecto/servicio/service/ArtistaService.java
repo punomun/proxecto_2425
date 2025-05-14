@@ -7,6 +7,7 @@ import java.util.List;
 public interface ArtistaService {
     List<Artista> obtenerTodos();
     Artista obtenerPorId(int id);
+    List<Artista> obtenerPorIdEvento(int idEvento);
     Artista guardar(Artista artista);
     Artista actualizar(int id, Artista artista);
     boolean eliminarPorId(int id);
