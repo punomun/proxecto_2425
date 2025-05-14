@@ -1,7 +1,6 @@
 package com.example.vibragenda.vista.adaptador
 
 import android.graphics.BitmapFactory
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vibragenda.modelo.entidad.Artista
