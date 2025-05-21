@@ -25,8 +25,9 @@ CREATE TABLE IF NOT EXISTS artista_evento(
 );
 
 CREATE TABLE IF NOT EXISTS usuario(
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(30) NOT NULL UNIQUE,
-	contraseña VARCHAR(80) NOT NULL,
+	hash_contrasenha VARCHAR(128) NOT NULL,
+	salt VARCHAR(64) NOT NULL,
 	perfil VARCHAR(7) NOT NULL CHECK (perfil IN('admin', 'usuario'))
 );

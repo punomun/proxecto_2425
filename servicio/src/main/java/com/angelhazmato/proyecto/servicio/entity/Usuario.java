@@ -19,15 +19,10 @@ public class Usuario {
     private int id;
     @Column(name="nombre")
     private String nombre;
-	@Column(name="contraseña")
-	private String contraseña;
+	@Column(name="hash_contrasenha")
+	private String hashContrasenha;
+    @Column(name="salt")
+    private String salt;
     @Column(name="perfil")
 	private String perfil;
-
-    public Usuario(String nombre, String contraseña, String perfil) {
-        this.nombre = nombre;
-        this.contraseña = contraseña;
-        if (!"admin".equalsIgnoreCase(perfil) && !"usuario".equalsIgnoreCase(perfil)) perfil = "usuario";
-        this.perfil = perfil;
-    }
 }
