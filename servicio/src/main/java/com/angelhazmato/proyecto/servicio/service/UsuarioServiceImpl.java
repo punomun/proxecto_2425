@@ -1,11 +1,14 @@
 package com.angelhazmato.proyecto.servicio.service;
 
+import com.angelhazmato.proyecto.servicio.controller.PwdUtils;
 import com.angelhazmato.proyecto.servicio.dao.UsuarioRepository;
 import com.angelhazmato.proyecto.servicio.entity.Usuario;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
@@ -16,12 +19,27 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
+    public List<Usuario> obtenerTodos() {
+        return usuarioRepository.findAll();
+    }
+
+    @Override
     public Usuario obtenerPorId(int id) {
         return usuarioRepository.findById(id).orElse(null);
     }
 
     @Override
     public Usuario guardar(Usuario usuario) {
+        try {
+            String contrasenhaSimple = usuario.getHashContrasenha();
+            String salt = PwdUtils.salt();
+            String hashContrasenha = PwdUtils.hash(contrasenhaSimple, salt);
+            usuario.setSalt(salt);
+            usuario.setHashContrasenha(hashContrasenha);
+        } catch (Exception e) {
+            return null;
+        }
+
         return usuarioRepository.save(usuario);
     }
 
