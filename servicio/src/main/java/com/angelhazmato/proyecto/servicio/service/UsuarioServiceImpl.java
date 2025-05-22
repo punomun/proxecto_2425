@@ -3,10 +3,12 @@ package com.angelhazmato.proyecto.servicio.service;
 import com.angelhazmato.proyecto.servicio.controller.PwdUtils;
 import com.angelhazmato.proyecto.servicio.dao.UsuarioRepository;
 import com.angelhazmato.proyecto.servicio.entity.Usuario;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
