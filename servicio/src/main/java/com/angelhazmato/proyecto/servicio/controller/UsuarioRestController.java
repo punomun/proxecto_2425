@@ -1,11 +1,14 @@
 package com.angelhazmato.proyecto.servicio.controller;
 
+import com.angelhazmato.proyecto.servicio.entity.Artista;
 import com.angelhazmato.proyecto.servicio.entity.Usuario;
 import com.angelhazmato.proyecto.servicio.service.UsuarioService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -15,6 +18,11 @@ public class UsuarioRestController {
 
     public UsuarioRestController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Usuario>> getUsuarios() {
+        return ResponseEntity.ok(usuarioService.obtenerTodos());
     }
 
     @GetMapping("/{id}")
@@ -27,6 +35,9 @@ public class UsuarioRestController {
     @PostMapping
     public ResponseEntity<Usuario> postUsuario(@RequestBody Usuario usuario) {
         Usuario nuevoUsuario = usuarioService.guardar(usuario);
+
+        if (nuevoUsuario == null) return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+
         URI locationHeader = URI.create("/api/usuarios/" + nuevoUsuario.getId());
         return ResponseEntity.created(locationHeader).body(nuevoUsuario);
     }
