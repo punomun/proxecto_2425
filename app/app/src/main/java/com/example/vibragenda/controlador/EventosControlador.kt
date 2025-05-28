@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import androidx.lifecycle.lifecycleScope
 import com.example.vibragenda.R
 import com.example.vibragenda.modelo.ServicioApi
+import com.example.vibragenda.modelo.entidad.Evento
 import com.example.vibragenda.vista.ArtistaVista
 import com.example.vibragenda.vista.EventoVista
 import com.example.vibragenda.vista.EventosVista
@@ -17,24 +18,27 @@ import kotlinx.coroutines.withContext
 import java.util.Base64
 
 object EventosControlador {
-	fun cargarListaEventos(vista: EventosVista) {
-		vista.lifecycleScope.launch(Dispatchers.IO) {
-            val listaEventos = ServicioApi.obtenerEventos()
+    fun cargarListaEventos(vista: EventosVista) {
+        vista.lifecycleScope.launch(Dispatchers.IO) {
+            val idArtista = vista.intent.getIntExtra("ID_ARTISTA", -1)
+            val listaEventos: List<Evento> = if (idArtista == -1) ServicioApi.obtenerEventos()
+            else ServicioApi.obtenerEventosDeArtista(idArtista)
+
             withContext(Dispatchers.Main) {
-                val eventoAdaptador = EventoAdaptador(listaEventos) { evento  ->
+                val eventoAdaptador = EventoAdaptador(listaEventos) { evento ->
                     val intent = Intent(vista, EventoVista::class.java)
                     intent.putExtra("EVENTO_ID", evento.id)
                     vista.startActivity(intent)
                 }
                 vista.recyclerView.adapter = eventoAdaptador
-				
+
                 VistaUtils.mostrarDatos(vista.spinner, vista.recyclerView)
             }
         }
-	}
-	
-	fun cargarEvento(vista: EventoVista) {
-		vista.lifecycleScope.launch(Dispatchers.IO) {
+    }
+
+    fun cargarEvento(vista: EventoVista) {
+        vista.lifecycleScope.launch(Dispatchers.IO) {
             val evento = ServicioApi.obtenerEvento(vista.intent.getIntExtra("EVENTO_ID", 1))
             val artistasEvento = ServicioApi.obtenerArtistasDeEvento(evento.id)
             withContext(Dispatchers.Main) {
@@ -50,19 +54,35 @@ object EventosControlador {
                 vista.lugar.text = evento.lugar
 
                 if (artistasEvento.isNotEmpty()) {
-                    val artistaAdaptador = ArtistaAdaptador(artistasEvento) { artista  ->
+                    val artistaAdaptador = ArtistaAdaptador(artistasEvento) { artista ->
                         val intent = Intent(vista, ArtistaVista::class.java)
                         intent.putExtra("ARTISTA_ID", artista.id)
                         vista.startActivity(intent)
                     }
                     vista.recyclerView.adapter = artistaAdaptador
-					
-                    VistaUtils.mostrarDatos(vista.spinner, vista.img, vista.nombre, vista.fecha, vista.lugar, vista.artistasConfirmados, vista.recyclerView)
+
+                    VistaUtils.mostrarDatos(
+                        vista.spinner,
+                        vista.img,
+                        vista.nombre,
+                        vista.fecha,
+                        vista.lugar,
+                        vista.artistasConfirmados,
+                        vista.recyclerView
+                    )
                 } else {
-                    vista.artistasConfirmados.text = vista.getString(R.string.no_hay_artistas_confirmados)
-                    VistaUtils.mostrarDatos(vista.spinner, vista.img, vista.nombre, vista.fecha, vista.lugar, vista.artistasConfirmados)
+                    vista.artistasConfirmados.text =
+                        vista.getString(R.string.no_hay_artistas_confirmados)
+                    VistaUtils.mostrarDatos(
+                        vista.spinner,
+                        vista.img,
+                        vista.nombre,
+                        vista.fecha,
+                        vista.lugar,
+                        vista.artistasConfirmados
+                    )
                 }
             }
         }
-	}
+    }
 }

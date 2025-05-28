@@ -7,6 +7,7 @@ import com.example.vibragenda.R
 import com.example.vibragenda.modelo.ServicioApi
 import com.example.vibragenda.vista.ArtistaVista
 import com.example.vibragenda.vista.ArtistasVista
+import com.example.vibragenda.vista.EventosVista
 import com.example.vibragenda.vista.VistaUtils
 import com.example.vibragenda.vista.adaptador.ArtistaAdaptador
 import kotlinx.coroutines.Dispatchers
@@ -46,8 +47,14 @@ object ArtistasControlador {
                 vista.nombre.text = artista.nombre
                 vista.desc.text = artista.descripcion
                 vista.fecha.text = artista.fechaFormacion
+
+                vista.botonEventos.setOnClickListener {
+					val intent = Intent(vista, EventosVista::class.java)
+					intent.putExtra("ID_ARTISTA", artista.id)
+					vista.startActivity(intent)
+				}
 				
-                VistaUtils.mostrarDatos(vista.spinner, vista.img, vista.nombre, vista.desc, vista.fecha)
+                VistaUtils.mostrarDatos(vista.spinner, vista.img, vista.nombre, vista.desc, vista.fecha, vista.botonEventos)
             }
         }
 	}

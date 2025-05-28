@@ -1,6 +1,7 @@
 package com.example.vibragenda.vista
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -16,6 +17,7 @@ class ArtistaVista : AppCompatActivity() {
     lateinit var nombre: TextView
     lateinit var desc: TextView
     lateinit var fecha: TextView
+	lateinit var botonEventos: Button
     lateinit var spinner: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +33,10 @@ class ArtistaVista : AppCompatActivity() {
         nombre = findViewById(R.id.txtVwArtistaNombre)
         desc = findViewById(R.id.txtVwArtistaDesc)
         fecha = findViewById(R.id.txtVwArtistaFecha)
+		botonEventos = findViewById(R.id.btnArtistaBuscarEventos)
         spinner = findViewById(R.id.progressBar)
 
-        VistaUtils.ocultarDatos(spinner, img, nombre, desc, fecha)
+        VistaUtils.ocultarDatos(spinner, img, nombre, desc, fecha, botonEventos)
 
         ArtistasControlador.cargarArtista(this)
     }
