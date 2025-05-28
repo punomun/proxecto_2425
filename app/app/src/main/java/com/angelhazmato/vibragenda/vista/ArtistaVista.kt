@@ -33,7 +33,7 @@ class ArtistaVista : AppCompatActivity() {
         nombre = findViewById(R.id.txtVwArtistaNombre)
         desc = findViewById(R.id.txtVwArtistaDesc)
         fecha = findViewById(R.id.txtVwArtistaFecha)
-		botonEventos = findViewById(R.id.btnArtistaBuscarEventos)
+        botonEventos = findViewById(R.id.btnArtistaBuscarEventos)
         spinner = findViewById(R.id.progressBar)
 
         VistaUtils.ocultarDatos(spinner, img, nombre, desc, fecha, botonEventos)
