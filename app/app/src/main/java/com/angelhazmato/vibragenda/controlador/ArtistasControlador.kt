@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.lifecycle.lifecycleScope
 import com.example.vibragenda.R
-import com.angelhazmato.vibragenda.modelo.ServicioApi
 import com.angelhazmato.vibragenda.vista.ArtistaVista
 import com.angelhazmato.vibragenda.vista.ArtistasVista
 import com.angelhazmato.vibragenda.vista.EventosVista

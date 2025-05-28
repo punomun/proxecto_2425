@@ -1,4 +1,4 @@
-package com.angelhazmato.vibragenda.modelo
+package com.angelhazmato.vibragenda.controlador
 
 import com.angelhazmato.vibragenda.modelo.entidad.Artista
 import com.angelhazmato.vibragenda.modelo.entidad.Evento
