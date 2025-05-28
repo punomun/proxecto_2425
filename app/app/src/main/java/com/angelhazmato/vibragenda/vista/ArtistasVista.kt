@@ -1,4 +1,4 @@
-package com.example.vibragenda.vista
+package com.angelhazmato.vibragenda.vista
 
 import android.os.Bundle
 import android.widget.ProgressBar
@@ -9,7 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vibragenda.R
-import com.example.vibragenda.controlador.ArtistasControlador
+import com.angelhazmato.vibragenda.controlador.ArtistasControlador
 
 class ArtistasVista : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView

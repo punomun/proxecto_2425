@@ -1,4 +1,4 @@
-package com.example.vibragenda.vista
+package com.angelhazmato.vibragenda.vista
 
 import android.os.Bundle
 import android.widget.Button
@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.vibragenda.R
-import com.example.vibragenda.controlador.ArtistasControlador
+import com.angelhazmato.vibragenda.controlador.ArtistasControlador
 
 class ArtistaVista : AppCompatActivity() {
     lateinit var img: ImageView

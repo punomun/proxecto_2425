@@ -1,4 +1,4 @@
-package com.example.vibragenda.vista
+package com.angelhazmato.vibragenda.vista
 
 import android.view.View
 import android.widget.ProgressBar

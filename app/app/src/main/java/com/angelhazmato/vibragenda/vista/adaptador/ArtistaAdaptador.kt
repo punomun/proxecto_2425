@@ -1,9 +1,9 @@
-package com.example.vibragenda.vista.adaptador
+package com.angelhazmato.vibragenda.vista.adaptador
 
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vibragenda.modelo.entidad.Evento
+import com.angelhazmato.vibragenda.modelo.entidad.Artista
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -11,37 +11,37 @@ import android.widget.TextView
 import com.example.vibragenda.R
 import java.util.Base64
 
-class EventoAdaptador(private val eventoList: List<Evento>, private val onItemClick: (Evento) -> Unit) : RecyclerView.Adapter<EventoAdaptador.ViewHolder>() {
+class ArtistaAdaptador(private val artistaList: List<Artista>, private val onItemClick: (Artista) -> Unit) : RecyclerView.Adapter<ArtistaAdaptador.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var nombre: TextView = view.findViewById(R.id.txtViewEventoItem)
-        var imagen: ImageView = view.findViewById(R.id.imgEventoItem)
+        var nombre: TextView = view.findViewById(R.id.txtViewArtistaItem)
+        var imagen: ImageView = view.findViewById(R.id.imgArtistaItem)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_evento, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_artista, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val evento = eventoList[position]
+        val artista = artistaList[position]
 
-        holder.nombre.text = evento.nombre
+        holder.nombre.text = artista.nombre
 
         try {
-            val byteArray = Base64.getDecoder().decode(evento.icono)
+            val byteArray = Base64.getDecoder().decode(artista.icono)
             val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
             holder.imagen.setImageBitmap(bitmap)
-        } catch (e: Exception) {
+        } catch(e: Exception) {
             holder.imagen.setImageResource(R.drawable.no_image_1x1)
         }
 
         holder.itemView.setOnClickListener {
-            onItemClick(evento)
+            onItemClick(artista)
         }
     }
 
     override fun getItemCount(): Int {
-        return eventoList.size
+        return artistaList.size
     }
 
 }

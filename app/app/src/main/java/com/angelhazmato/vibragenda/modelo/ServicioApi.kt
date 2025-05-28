@@ -1,7 +1,7 @@
-package com.example.vibragenda.modelo
+package com.angelhazmato.vibragenda.modelo
 
-import com.example.vibragenda.modelo.entidad.Artista
-import com.example.vibragenda.modelo.entidad.Evento
+import com.angelhazmato.vibragenda.modelo.entidad.Artista
+import com.angelhazmato.vibragenda.modelo.entidad.Evento
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.OkHttpClient

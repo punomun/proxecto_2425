@@ -16,19 +16,19 @@
         android:theme="@style/Theme.Vibragenda"
         tools:targetApi="31">
         <activity
-            android:name=".vista.EventosVista"
+            android:name="com.angelhazmato.vibragenda.vista.EventosVista"
             android:exported="false" />
         <activity
-            android:name=".vista.EventoVista"
+            android:name="com.angelhazmato.vibragenda.vista.EventoVista"
             android:exported="false" />
         <activity
-            android:name=".vista.ArtistaVista"
+            android:name="com.angelhazmato.vibragenda.vista.ArtistaVista"
             android:exported="false" />
         <activity
-            android:name=".vista.ArtistasVista"
+            android:name="com.angelhazmato.vibragenda.vista.ArtistasVista"
             android:exported="false" />
         <activity
-            android:name=".vista.MainActivity"
+            android:name="com.angelhazmato.vibragenda.vista.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista.EventosVista">
+    tools:context="com.angelhazmato.vibragenda.vista.EventosVista">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListaEventos"

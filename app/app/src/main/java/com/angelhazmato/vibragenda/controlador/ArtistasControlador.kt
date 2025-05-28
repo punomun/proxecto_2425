@@ -1,15 +1,15 @@
-package com.example.vibragenda.controlador
+package com.angelhazmato.vibragenda.controlador
 
 import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.lifecycle.lifecycleScope
 import com.example.vibragenda.R
-import com.example.vibragenda.modelo.ServicioApi
-import com.example.vibragenda.vista.ArtistaVista
-import com.example.vibragenda.vista.ArtistasVista
-import com.example.vibragenda.vista.EventosVista
-import com.example.vibragenda.vista.VistaUtils
-import com.example.vibragenda.vista.adaptador.ArtistaAdaptador
+import com.angelhazmato.vibragenda.modelo.ServicioApi
+import com.angelhazmato.vibragenda.vista.ArtistaVista
+import com.angelhazmato.vibragenda.vista.ArtistasVista
+import com.angelhazmato.vibragenda.vista.EventosVista
+import com.angelhazmato.vibragenda.vista.VistaUtils
+import com.angelhazmato.vibragenda.vista.adaptador.ArtistaAdaptador
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

@@ -1,4 +1,4 @@
-package com.example.vibragenda.modelo.entidad
+package com.angelhazmato.vibragenda.modelo.entidad
 
 data class Evento(
     var id: Int = 0,
