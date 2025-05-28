@@ -2,6 +2,7 @@ package com.angelhazmato.vibragenda.controlador
 
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.vibragenda.R
 import com.angelhazmato.vibragenda.modelo.ServicioApi
@@ -23,6 +24,16 @@ object EventosControlador {
             val idArtista = vista.intent.getIntExtra("ID_ARTISTA", -1)
             val listaEventos: List<Evento> = if (idArtista == -1) ServicioApi.obtenerEventos()
             else ServicioApi.obtenerEventosDeArtista(idArtista)
+
+            if (listaEventos.isEmpty()) {
+                val str = if (idArtista == -1) "No hay eventos en la base de datos"
+                else "Este artista no tiene eventos confirmados"
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(vista, str, Toast.LENGTH_LONG).show()
+                    vista.finish()
+                }
+                return@launch
+            }
 
             withContext(Dispatchers.Main) {
                 val eventoAdaptador = EventoAdaptador(listaEventos) { evento ->
