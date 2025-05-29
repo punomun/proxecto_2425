@@ -31,7 +31,7 @@ public class ArtistaRestController {
     }
 
     @GetMapping("/evento/{idEvento}")
-    public ResponseEntity<List<Artista >> getArtistaByEvento(@PathVariable int idEvento) {
+    public ResponseEntity<List<Artista>> getArtistasByEvento(@PathVariable int idEvento) {
         List<Artista> artistas = artistaService.obtenerPorIdEvento(idEvento);
         if (artistas == null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(artistas);
@@ -67,4 +67,21 @@ public class ArtistaRestController {
         return ResponseEntity.noContent().build();
     }
 
+	@GetMapping("/{idArtista}/eventos/{idEvento}")
+	public ResponseEntity<Void> getActuacion(@PathVariable int idArtista, @PathVariable int idEvento) {
+		if (artistaService.existeActuacion(idArtista, idEvento)) return ResponseEntity.ok().build();
+		return ResponseEntity.notFound().build();
+	}
+	
+	@PostMapping("/{idArtista}/eventos/{idEvento}")
+	public ResponseEntity<Void> postActuacion(@PathVariable int idArtista, @PathVariable int idEvento) {
+		if (artistaService.inscribirArtistaEnEvento(idArtista, idEvento)) return ResponseEntity.ok().build();
+		return ResponseEntity.notFound().build();
+	}
+	
+	@DeleteMapping("/{idArtista}/eventos/{idEvento}")
+	public ResponseEntity<Void> deleteActuacion(@PathVariable int idArtista, @PathVariable int idEvento) {
+		if (artistaService.borrarArtistaDeEvento(idArtista, idEvento)) return ResponseEntity.noContent().build();
+		return ResponseEntity.notFound().build();
+	}
 }

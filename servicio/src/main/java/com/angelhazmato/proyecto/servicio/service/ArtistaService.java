@@ -12,4 +12,7 @@ public interface ArtistaService {
     Artista actualizar(int id, Artista artista);
     boolean eliminarPorId(int id);
 	void eliminarTodos();
+	boolean existeActuacion(int idArtista, int idEvento);
+	boolean inscribirArtistaEnEvento(int idArtista, int idEvento);
+	boolean borrarArtistaDeEvento(int idArtista, int idEvento);
 }
