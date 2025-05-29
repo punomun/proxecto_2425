@@ -35,4 +35,11 @@ public class Evento {
     @ManyToMany(mappedBy = "eventos")
     @JsonIgnoreProperties("eventos")
     private Set<Artista> artistas = new HashSet<>();
+
+    @PreRemove
+    private void borrarArtistas() {
+        for (Artista a : new HashSet<>(this.artistas)) {
+            a.getEventos().remove(this);
+        }
+    }
 }
