@@ -1,6 +1,5 @@
 package com.angelhazmato.proyecto.servicio.controller;
 
-import com.angelhazmato.proyecto.servicio.entity.Artista;
 import com.angelhazmato.proyecto.servicio.entity.Usuario;
 import com.angelhazmato.proyecto.servicio.service.UsuarioService;
 import org.springframework.http.HttpStatus;
@@ -40,6 +39,13 @@ public class UsuarioRestController {
 
         URI locationHeader = URI.create("/api/usuarios/" + nuevoUsuario.getId());
         return ResponseEntity.created(locationHeader).body(nuevoUsuario);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Usuario> putUsuario(@PathVariable int id, @RequestBody Usuario usuario) {
+        Usuario usuarioActualizado = usuarioService.actualizar(id, usuario);
+        if (usuarioActualizado == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(usuarioActualizado);
     }
 
     @DeleteMapping("/{id}")

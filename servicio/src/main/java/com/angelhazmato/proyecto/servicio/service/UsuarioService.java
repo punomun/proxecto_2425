@@ -8,6 +8,7 @@ public interface UsuarioService {
     List<Usuario> obtenerTodos();
     Usuario obtenerPorId(int id);
     Usuario guardar(Usuario usuario);
+    Usuario actualizar(int id, Usuario usuario);
     boolean eliminarPorId(int id);
 	boolean eliminarPorNombre(String nombre);
 }

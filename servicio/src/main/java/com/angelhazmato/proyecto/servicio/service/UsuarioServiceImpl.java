@@ -42,6 +42,24 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
+    public Usuario actualizar(int id, Usuario usuario) {
+        if (usuarioRepository.existsById(id)) {
+            try {
+                String contrasenhaSimple = usuario.getHashContrasenha();
+                String salt = PwdUtils.salt();
+                String hashContrasenha = PwdUtils.hash(contrasenhaSimple, salt);
+                usuario.setSalt(salt);
+                usuario.setHashContrasenha(hashContrasenha);
+                usuario.setId(id);
+                return usuarioRepository.save(usuario);
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public boolean eliminarPorId(int id) {
         if (id == 1 || !usuarioRepository.existsById(id)) return false;
         usuarioRepository.deleteById(id);
