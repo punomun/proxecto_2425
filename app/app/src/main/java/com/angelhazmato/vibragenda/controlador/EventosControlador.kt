@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import com.example.vibragenda.R
 import com.angelhazmato.vibragenda.modelo.entidad.Evento
 import com.angelhazmato.vibragenda.vista.ArtistaVista
 import com.angelhazmato.vibragenda.vista.EventoVista
@@ -12,6 +11,7 @@ import com.angelhazmato.vibragenda.vista.EventosVista
 import com.angelhazmato.vibragenda.vista.VistaUtils
 import com.angelhazmato.vibragenda.vista.adaptador.ArtistaAdaptador
 import com.angelhazmato.vibragenda.vista.adaptador.EventoAdaptador
+import com.example.vibragenda.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -42,7 +42,7 @@ object EventosControlador {
                 }
                 vista.recyclerView.adapter = eventoAdaptador
 
-                VistaUtils.mostrarDatos(vista.spinner, vista.recyclerView)
+                VistaUtils.mostrarDatos(vista.spinner, vista.recyclerView, vista.toolbar)
             }
         }
     }
@@ -78,7 +78,8 @@ object EventosControlador {
                         vista.fecha,
                         vista.lugar,
                         vista.artistasConfirmados,
-                        vista.recyclerView
+                        vista.recyclerView,
+                        vista.toolbar
                     )
                 } else {
                     vista.artistasConfirmados.text =
@@ -89,7 +90,8 @@ object EventosControlador {
                         vista.nombre,
                         vista.fecha,
                         vista.lugar,
-                        vista.artistasConfirmados
+                        vista.artistasConfirmados,
+                        vista.toolbar
                     )
                 }
             }

@@ -26,7 +26,7 @@ object ArtistasControlador {
                 }
                 vista.recyclerView.adapter = artistaAdaptador
 				
-                VistaUtils.mostrarDatos(vista.spinner, vista.recyclerView)
+                VistaUtils.mostrarDatos(vista.spinner, vista.recyclerView, vista.toolbar)
             }
         }
 	}
@@ -53,7 +53,7 @@ object ArtistasControlador {
 					vista.startActivity(intent)
 				}
 				
-                VistaUtils.mostrarDatos(vista.spinner, vista.img, vista.nombre, vista.desc, vista.fecha, vista.botonEventos)
+                VistaUtils.mostrarDatos(vista.spinner, vista.img, vista.nombre, vista.desc, vista.fecha, vista.botonEventos, vista.toolbar)
             }
         }
 	}

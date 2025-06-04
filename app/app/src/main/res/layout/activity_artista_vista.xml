@@ -7,19 +7,29 @@
     android:layout_height="match_parent"
     tools:context="com.angelhazmato.vibragenda.vista.ArtistaVista">
 
+	<com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/artistaToolbar"
+            android:minHeight="?attr/actionBarSize"
+            app:title="Artista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back_24px"
+            app:logo="@drawable/ic_artist_24px"
+            app:menu="@menu/toolbar_elemento"/>
+
     <ImageView
         android:id="@+id/imgVwArtista"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artistaToolbar"
         app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -28,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <TextView
         android:id="@+id/txtVwArtistaNombre"
@@ -46,11 +56,13 @@
         android:id="@+id/txtVwArtistaFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:text="fecha"
-        app:layout_constraintBottom_toBottomOf="@+id/txtVwArtistaNombre"
+        app:layout_constraintBottom_toTopOf="@+id/svGestionArt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtVwArtistaNombre"
-        app:layout_constraintTop_toTopOf="@+id/txtVwArtistaNombre" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVwArtistaNombre" />
 
     <Button
         android:id="@+id/btnArtistaBuscarEventos"
@@ -63,6 +75,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
+        android:id="@+id/svGestionArt"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scrollbars="vertical"
@@ -70,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtVwArtistaNombre">
+        app:layout_constraintTop_toBottomOf="@id/txtVwArtistaFecha">
 
         <LinearLayout
             android:layout_width="match_parent"
