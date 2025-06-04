@@ -4,10 +4,9 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.lifecycle.lifecycleScope
 import com.example.vibragenda.R
-import com.angelhazmato.vibragenda.vista.ArtistaVista
-import com.angelhazmato.vibragenda.vista.ArtistasVista
-import com.angelhazmato.vibragenda.vista.EventosVista
-import com.angelhazmato.vibragenda.vista.VistaUtils
+import com.angelhazmato.vibragenda.vista.entidad.ArtistaVista
+import com.angelhazmato.vibragenda.vista.entidad.ArtistasVista
+import com.angelhazmato.vibragenda.vista.entidad.EventosVista
 import com.angelhazmato.vibragenda.vista.adaptador.ArtistaAdaptador
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

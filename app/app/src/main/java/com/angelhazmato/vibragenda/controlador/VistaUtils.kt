@@ -1,4 +1,4 @@
-package com.angelhazmato.vibragenda.vista
+package com.angelhazmato.vibragenda.controlador
 
 import android.view.View
 import android.widget.ProgressBar

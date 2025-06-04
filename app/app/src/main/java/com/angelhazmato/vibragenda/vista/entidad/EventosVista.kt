@@ -1,4 +1,4 @@
-package com.angelhazmato.vibragenda.vista
+package com.angelhazmato.vibragenda.vista.entidad
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vibragenda.R
 import com.angelhazmato.vibragenda.controlador.EventosControlador
+import com.angelhazmato.vibragenda.vista.AjustesVista
+import com.angelhazmato.vibragenda.controlador.VistaUtils
 import com.angelhazmato.vibragenda.vista.crud.GestionarEvento
 import com.google.android.material.appbar.MaterialToolbar
 

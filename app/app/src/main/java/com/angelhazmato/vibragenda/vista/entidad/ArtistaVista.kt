@@ -1,4 +1,4 @@
-package com.angelhazmato.vibragenda.vista
+package com.angelhazmato.vibragenda.vista.entidad
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,6 +16,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.vibragenda.R
 import com.angelhazmato.vibragenda.controlador.ArtistasControlador
 import com.angelhazmato.vibragenda.controlador.ServicioApi
+import com.angelhazmato.vibragenda.vista.AjustesVista
+import com.angelhazmato.vibragenda.controlador.VistaUtils
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
