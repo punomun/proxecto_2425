@@ -20,6 +20,10 @@
                 <transformer>
                   <mainClass>App</mainClass>
                 </transformer>
+                <transformer />
+                <transformer>
+                  <resource>jasperreports_extension.properties</resource>
+                </transformer>
               </transformers>
             </configuration>
           </execution>

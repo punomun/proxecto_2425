@@ -975,7 +975,7 @@ public class ControladorPrincipal {
         propiedades.setProperty("bd.pwd", dialogOpciones.getTxtFldPwdBd().getText());
         if (guardarPropiedades()) {
             dialogOpciones.dispose();
-            JOptionPane.showMessageDialog(dialogOpciones, "Cambios guardados correctamente", null, JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(dialogOpciones, "Cambios guardados correctamente. Es posible que tengas que reiniciar la aplicación para que se efectúen todos.", null, JOptionPane.PLAIN_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(dialogOpciones, "No se han podido guardar los cambios", null, JOptionPane.PLAIN_MESSAGE);
         }
