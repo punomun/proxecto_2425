@@ -1,0 +1,78 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="eventos_de_artista" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d57a911-4cce-46af-842e-894c808d448c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL1"/>
+	<parameter name="ID_ARTISTA" class="java.lang.Integer"/>
+	<query language="SQL"><![CDATA[SELECT 
+a.nombre AS nombre_artista,
+e.nombre AS nombre_evento,
+e.fecha AS fecha_evento,
+e.lugar as lugar_evento
+FROM evento e
+JOIN artista_evento ae
+ON e.id = ae.id_evento
+JOIN artista a
+ON a.id = ae.id_artista
+WHERE a.id =  $P{ID_ARTISTA} ]]></query>
+	<field name="nombre_artista" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_artista"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="artista"/>
+	</field>
+	<field name="nombre_evento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_evento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+	</field>
+	<field name="fecha_evento" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_evento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+	</field>
+	<field name="lugar_evento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lugar"/>
+		<property name="com.jaspersoft.studio.field.label" value="lugar_evento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="1afc6356-8c69-4594-9d18-918fc8e337b4" x="0" y="0" width="140" height="79" fontSize="25.0" bold="true" vTextAlign="Middle">
+			<text><![CDATA[Eventos de]]></text>
+		</element>
+		<element kind="textField" uuid="4ef964c9-1c1c-41bc-b6b2-023bb323510c" x="140" y="0" width="405" height="79" fontSize="25.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{nombre_artista}]]></expression>
+		</element>
+	</title>
+	<columnHeader height="44" splitType="Stretch">
+		<element kind="staticText" uuid="0e6899d1-dedd-40de-a044-a4a01d0238eb" x="0" y="10" width="140" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Evento]]></text>
+		</element>
+		<element kind="staticText" uuid="24bcb90b-b13e-4241-91fe-c8d561bc8be8" x="160" y="10" width="190" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Fecha]]></text>
+		</element>
+		<element kind="staticText" uuid="54fc40d6-4ebe-4429-8d48-df489287b8b3" x="360" y="10" width="184" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Lugar]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="62" splitType="Stretch">
+			<element kind="textField" uuid="3746abbb-7d30-487f-bcb5-c0f8b58aa70e" x="0" y="0" width="140" height="60" fontSize="16.0">
+				<expression><![CDATA[$F{nombre_evento}]]></expression>
+			</element>
+			<element kind="textField" uuid="ee06d75b-ee2a-421b-acf5-734c4b189d49" x="160" y="0" width="190" height="60" fontSize="16.0" blankWhenNull="true">
+				<expression><![CDATA[$F{fecha_evento}.toLocaleString().split(",")[0]]]></expression>
+			</element>
+			<element kind="textField" uuid="d3ac1292-aa44-41c7-a383-92098d5412fc" x="360" y="0" width="184" height="60" fontSize="16.0" blankWhenNull="true">
+				<expression><![CDATA[$F{lugar_evento}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<summary height="56" splitType="Stretch">
+		<element kind="staticText" uuid="e1c504df-b124-47f8-8e5e-57cb0e6545f2" x="0" y="10" width="140" height="30" fontSize="19.0">
+			<text><![CDATA[Eventos totales:]]></text>
+		</element>
+		<element kind="textField" uuid="5058fd47-1405-4d9b-95d8-4b49dc5e8935" x="140" y="10" width="90" height="30" fontSize="19.0" bold="true">
+			<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
+		</element>
+	</summary>
+</jasperReport>

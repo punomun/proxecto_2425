@@ -1,0 +1,62 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="informe_basico_artistas" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dd1f0399-ec2f-4767-9c02-afba9683314c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL1"/>
+	<query language="SQL"><![CDATA[SELECT id,
+	nombre,
+	fecha_formacion AS "fecha de formación"
+FROM artista]]></query>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="artista"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="artista"/>
+	</field>
+	<field name="fecha de formación" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_formacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha de formación"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="artista"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="b4f08400-bb7a-492f-a5b0-5fb8a5746d9b" x="0" y="0" width="150" height="79" fontSize="37.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Artistas]]></text>
+		</element>
+	</title>
+	<columnHeader height="41" splitType="Stretch">
+		<element kind="staticText" uuid="c2f87b13-d272-4a1f-b4a4-402009fb34a5" x="0" y="10" width="100" height="30" fontSize="19.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[id]]></text>
+		</element>
+		<element kind="staticText" uuid="10983297-1031-4aba-aaa6-4f2e8262ab9e" x="150" y="10" width="100" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Nombre]]></text>
+		</element>
+		<element kind="staticText" uuid="e0627da7-1e1d-4d6c-a0aa-826677e04f3d" x="380" y="10" width="180" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Fecha de formación]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<element kind="textField" uuid="534fdd36-0b52-4506-bdf8-bbdab267afd6" x="0" y="-1" width="100" height="58" fontSize="16.0">
+				<expression><![CDATA[$F{id}]]></expression>
+			</element>
+			<element kind="textField" uuid="0e67107d-f3c7-430e-bfcd-bcecb31f7d0f" x="150" y="-1" width="230" height="58" fontSize="16.0">
+				<expression><![CDATA[$F{nombre}]]></expression>
+			</element>
+			<element kind="textField" uuid="f1739a11-1e03-491e-bef2-f73f7112de5e" x="380" y="-1" width="180" height="58" fontSize="16.0" pattern="dd 'de' MMMM 'de' yyyy" blankWhenNull="false">
+				<expression><![CDATA[$F{fecha de formación}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<summary height="32" splitType="Stretch">
+		<element kind="staticText" uuid="944e2e00-361f-4752-8ce6-f203d0a0990c" x="0" y="0" width="150" height="30" fontSize="19.0" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Artistas totales:]]></text>
+		</element>
+		<element kind="textField" uuid="11d3c3d5-6415-426f-b2e6-046ae7bea81b" x="150" y="0" width="80" height="30" fontSize="19.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+			<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
+		</element>
+	</summary>
+</jasperReport>

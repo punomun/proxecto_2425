@@ -1,0 +1,109 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="informe_basico_eventos" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24ac4309-1566-4975-8e2b-1742d6ce3bf9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL1"/>
+	<dataset name="NumArtistasEventos" uuid="b0734de7-fc2f-4501-b2b9-ba7bd216baa9">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL1"/>
+		<query language="SQL"><![CDATA[SELECT e.nombre AS evento, COUNT(a.id) AS artistas
+FROM evento e
+JOIN artista_evento ae
+ON e.id = ae.id_evento
+JOIN artista a
+ON a.id = ae.id_artista
+GROUP BY e.id]]></query>
+		<field name="evento" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="evento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+		</field>
+		<field name="artistas" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="artistas"/>
+			<property name="com.jaspersoft.studio.field.label" value="artistas"/>
+		</field>
+	</dataset>
+	<query language="SQL"><![CDATA[SELECT id, nombre, fecha, lugar
+FROM evento]]></query>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+	</field>
+	<field name="lugar" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lugar"/>
+		<property name="com.jaspersoft.studio.field.label" value="lugar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evento"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="16068de0-1146-48a3-84a6-ccd9a60532ee" x="0" y="0" width="150" height="79" fontSize="37.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Eventos]]></text>
+		</element>
+	</title>
+	<columnHeader height="44" splitType="Stretch">
+		<element kind="staticText" uuid="662020bb-2988-44d8-a54b-73125dd3412a" x="0" y="10" width="100" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[id]]></text>
+		</element>
+		<element kind="staticText" uuid="57b21a09-2b86-4c89-bba8-5942888ee338" x="100" y="10" width="120" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Nombre]]></text>
+		</element>
+		<element kind="staticText" uuid="9c3641eb-9ae0-4527-8b4b-3e8197beefaf" x="227" y="10" width="113" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Fecha]]></text>
+		</element>
+		<element kind="staticText" uuid="5ef3e0ff-9106-44c6-9cca-8262d0b7e5d9" x="350" y="10" width="210" height="30" fontSize="19.0" bold="true">
+			<text><![CDATA[Lugar]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="62" splitType="Stretch">
+			<element kind="textField" uuid="8bcb28bd-a398-4f48-ab8b-091e249202b8" x="0" y="0" width="100" height="60" fontSize="16.0">
+				<expression><![CDATA[$F{id}]]></expression>
+			</element>
+			<element kind="textField" uuid="deada671-489f-4922-aca9-36c346d50fb4" x="350" y="0" width="210" height="60" fontSize="16.0" blankWhenNull="true">
+				<expression><![CDATA[$F{lugar}]]></expression>
+			</element>
+			<element kind="textField" uuid="d4ad7377-1dee-460f-94e9-b94f5e48f24e" x="227" y="0" width="113" height="60" fontSize="16.0" blankWhenNull="true">
+				<expression><![CDATA[$F{fecha}.toLocaleString().split(",")[0]]]></expression>
+			</element>
+			<element kind="textField" uuid="6d29f163-0294-45ad-bfa5-3b9d079d17d5" x="100" y="0" width="120" height="60" fontSize="16.0">
+				<expression><![CDATA[$F{nombre}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<summary height="303" splitType="Stretch">
+		<element kind="textField" uuid="cbf629d7-5870-4180-9719-6d55e3e26dd8" x="140" y="0" width="80" height="30" fontSize="19.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+			<expression><![CDATA[$V{REPORT_COUNT}]]></expression>
+		</element>
+		<element kind="staticText" uuid="938ce5cf-bfc9-4b17-abeb-6faeaacc1867" x="0" y="0" width="140" height="30" fontSize="19.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Eventos totales:]]></text>
+		</element>
+		<element kind="chart" chartType="pie" uuid="ba61ced3-a961-424f-9d7c-ec32a5ca0555" x="0" y="70" width="545" height="200" evaluationTime="Report">
+			<dataset kind="pie">
+				<datasetRun uuid="9e15ee07-f1af-4636-acad-a53d45123696" subDataset="NumArtistasEventos">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<series>
+					<keyExpression><![CDATA[$F{evento}]]></keyExpression>
+					<valueExpression><![CDATA[$F{artistas}]]></valueExpression>
+					<labelExpression><![CDATA[$F{evento}+" ("+$F{artistas}+")"]]></labelExpression>
+				</series>
+			</dataset>
+			<plot>
+				<itemLabel/>
+			</plot>
+		</element>
+		<element kind="staticText" uuid="cc192f94-2704-4d62-a2ca-9212c6001000" x="0" y="40" width="400" height="30" fontSize="19.0">
+			<text><![CDATA[Número de artistas por cada evento:]]></text>
+		</element>
+	</summary>
+</jasperReport>
