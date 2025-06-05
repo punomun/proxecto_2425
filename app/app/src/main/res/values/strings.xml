@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Vibragenda</string>
-    <string name="artistas_confirmados_en_evento">Artistas confirmados</string>
+    <string name="artistas_confirmados_en_evento" translatable="false">Artistas confirmados</string>
     <string name="no_hay_artistas_confirmados">No hay artistas confirmados</string>
+    <string name="ajustes_modo_noche">Modo noche:</string>
+    <string name="imagen">Imagen</string>
+    <string name="nombre">Nombre</string>
+    <string name="descripcion">Descripción</string>
+    <string name="fecha">Fecha</string>
+    <string name="icono">Icono</string>
+    <string name="seleccionar_fecha">Seleccionar fecha</string>
+    <string name="escoger_icono">Escoger icono</string>
+    <string name="escoger_imagen">Escoger imagen</string>
 </resources>

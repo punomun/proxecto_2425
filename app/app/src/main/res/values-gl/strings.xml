@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vibragenda</string>
+    <string name="no_hay_artistas_confirmados">Non hai artistas confirmados</string>
+    <string name="ajustes_modo_noche">Modo noite:</string>
+    <string name="imagen">Imaxe</string>
+    <string name="nombre">Nome</string>
+    <string name="descripcion">Descrición</string>
+    <string name="fecha">Data</string>
+    <string name="icono">Icona</string>
+    <string name="seleccionar_fecha">Seleccionar data</string>
+    <string name="escoger_icono">Escoller icona</string>
+    <string name="escoger_imagen">Escoller imaxe</string>
+</resources>

@@ -18,7 +18,7 @@
         app:title="Gestionar Evento" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
+        android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
-        android:text="Nombre"
+        android:text="@string/nombre"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/gestionarEventoToolbar" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_marginEnd="8dp"
         android:text="Lugar"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/tvGestionEveNombre" />
 
     <TextView
@@ -59,9 +59,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
-        android:text="Fecha"
+        android:text="@string/fecha"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/tvGestionEveLugar" />
 
     <TextView
@@ -70,9 +70,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
-        android:text="Imagen"
+        android:text="@string/imagen"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/tvGestionEveFecha" />
 
     <TextView
@@ -81,9 +81,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
-        android:text="Icono"
+        android:text="@string/icono"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/tvGestionEveImagen" />
 
     <Button
@@ -112,37 +112,37 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvGestionEveNombre"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/gestionarEventoToolbar" />
 
     <Button
         android:id="@+id/btnGestionEveImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escoger imagen"
+        android:text="@string/escoger_imagen"
         app:layout_constraintBottom_toBottomOf="@+id/tvGestionEveImagen"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/tvGestionEveImagen" />
 
     <Button
         android:id="@+id/btnGestionEveIco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escoger icono"
+        android:text="@string/descripcion"
         app:layout_constraintBottom_toBottomOf="@+id/tvGestionEveIcono"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/tvGestionEveIcono" />
 
     <Button
         android:id="@+id/btnGestionEveFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seleccionar fecha"
+        android:text="@string/seleccionar_fecha"
         app:layout_constraintBottom_toBottomOf="@+id/tvGestionEveFecha"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/tvGestionEveFecha" />
 
     <TextView
@@ -151,7 +151,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/btnGestionEveImg"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/btnGestionEveFecha" />
 
     <EditText
@@ -163,7 +163,7 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/tvGestionEveFecha"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/etGestionEveNombre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
