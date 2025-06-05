@@ -259,7 +259,7 @@ public class DialogArtista extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(10, 50, 10, 50);
         getContentPane().add(btnMetodoHttp, gridBagConstraints);
 
-        btnArtistaBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ic_busqueda_24px.png"))); // NOI18N
+        btnArtistaBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ic_busqueda.png"))); // NOI18N
         btnArtistaBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnArtistaBuscarActionPerformed(evt);
