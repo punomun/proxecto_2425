@@ -11,4 +11,7 @@
     <string name="seleccionar_fecha">Seleccionar fecha</string>
     <string name="escoger_icono">Escoger icono</string>
     <string name="escoger_imagen">Escoger imagen</string>
+    <string name="guardar_ajustes">Guardar ajustes</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="fecha_seleccionada">Fecha seleccionada: %1$s</string>
 </resources>

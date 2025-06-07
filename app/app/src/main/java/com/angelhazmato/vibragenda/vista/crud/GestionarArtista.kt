@@ -85,7 +85,7 @@ class GestionarArtista : AppCompatActivity() {
             datePicker.show(supportFragmentManager, "DATE_PICKER")
             datePicker.addOnPositiveButtonClickListener {
                 fecha = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date(it))
-                textViewFecha.text = "Fecha seleccionada: $fecha"
+                textViewFecha.text = getString(R.string.fecha_seleccionada, fecha)
             }
         }
 
