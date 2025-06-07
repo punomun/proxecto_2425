@@ -36,7 +36,7 @@ class EventosVista : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             finish()
         }
-		
+
 		toolbar.setOnMenuItemClickListener {
 			when(it.itemId) {
 				R.id.crear_toolbar -> {
