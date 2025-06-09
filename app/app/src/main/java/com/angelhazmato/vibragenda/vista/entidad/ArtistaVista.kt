@@ -53,7 +53,8 @@ class ArtistaVista : AppCompatActivity() {
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.favorito_toolbar -> {
-                    Toast.makeText(this@ArtistaVista, "No implementado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ArtistaVista,
+                        getString(R.string.no_implementado), Toast.LENGTH_SHORT).show()
                     if (isFavorito) {
                         it.setIcon(R.drawable.ic_star_24px)
                         isFavorito = false
@@ -65,13 +66,13 @@ class ArtistaVista : AppCompatActivity() {
                 }
 
                 R.id.editar_toolbar -> {
-                    Toast.makeText(this@ArtistaVista, "No implementado", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@ArtistaVista, getString(R.string.no_implementado), Toast.LENGTH_LONG).show()
                     true
                 }
 
                 R.id.borrar_toolbar -> {
                     AlertDialog.Builder(this@ArtistaVista).setTitle("Borrar artista")
-                        .setMessage("¿Estás seguro que deseas borrar este artista?")
+                        .setMessage(getString(R.string.borrar_artista_confirmacion))
                         .setPositiveButton("Sí") { dialogInterface, _ ->
                             lifecycleScope.launch(Dispatchers.IO) {
                                 val borrado = ServicioApi.eliminarArtista(idArtista)
@@ -82,11 +83,12 @@ class ArtistaVista : AppCompatActivity() {
                                         finish()
                                     }
                                 } else {
-                                    Toast.makeText(this@ArtistaVista, "El artista no se ha podido borrar", Toast.LENGTH_LONG).show()
+                                    Toast.makeText(this@ArtistaVista,
+                                        getString(R.string.artista_no_borrado), Toast.LENGTH_LONG).show()
                                 }
                             }
 
-                        }.setNegativeButton("No") { dialogInterface, _ ->
+                        }.setNegativeButton(getString(R.string.negacion)) { dialogInterface, _ ->
                             dialogInterface.dismiss()
                         }.create().show()
                     true

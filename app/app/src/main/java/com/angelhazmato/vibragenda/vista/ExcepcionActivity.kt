@@ -19,16 +19,16 @@ class ExcepcionActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        AlertDialog.Builder(this@ExcepcionActivity).setTitle("Error de conexión")
-            .setMessage("Ha ocurrido un error en la conexión con el servicio.\n¿Deseas cambiar la URL?")
-            .setPositiveButton("Ir a ajustes") { _, _ ->
+        AlertDialog.Builder(this@ExcepcionActivity).setTitle(getString(R.string.error_conexion_titulo))
+            .setMessage(getString(R.string.error_conexion))
+            .setPositiveButton(getString(R.string.error_conexion_aceptar)) { _, _ ->
                 startActivity(
                     Intent(
                         this@ExcepcionActivity, AjustesVista::class.java
                     )
                 )
                 finish()
-            }.setNegativeButton("Salir de la aplicación") { _, _ ->
+            }.setNegativeButton(getString(R.string.error_conexion_denegar)) { _, _ ->
                 finishAffinity()
             }.setCancelable(false).create().show()
     }

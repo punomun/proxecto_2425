@@ -14,4 +14,21 @@
     <string name="guardar_ajustes">Guardar ajustes</string>
     <string name="ajustes">Ajustes</string>
     <string name="fecha_seleccionada">Fecha seleccionada: %1$s</string>
+    <string name="error_conexion">Ha ocurrido un error en la conexión con el servicio. ¿Deseas cambiar la URL?</string>
+    <string name="error_conexion_aceptar">Ir a ajustes</string>
+    <string name="error_conexion_denegar">Salir de la aplicación</string>
+    <string name="error_conexion_titulo">Error de conexión</string>
+    <string name="cambios_guardados">Cambios guardados</string>
+    <string name="no_implementado">No implementado</string>
+    <string name="borrar_artista_confirmacion">¿Estás seguro que deseas borrar este artista?</string>
+    <string name="negacion">No</string>
+    <string name="artista_no_borrado">El artista no se ha podido borrar</string>
+    <string name="borrar_evento_confirmacion">¿Estás seguro que deseas borrar este evento?</string>
+    <string name="evento_no_borrado">El evento no se ha podido borrar</string>
+    <string name="falta_nombre">Falta el nombre</string>
+    <string name="falta_fecha">Falta la fecha</string>
+    <string name="error_crear_artista">Ha ocurrido un error al crear el artista</string>
+    <string name="tipo_archivo_imagen">El archivo seleccionado debe ser una imagen</string>
+    <string name="selecciona_fecha">Selecciona fecha</string>
+    <string name="error_crear_evento">Ha ocurrido un error al crear el evento</string>
 </resources>

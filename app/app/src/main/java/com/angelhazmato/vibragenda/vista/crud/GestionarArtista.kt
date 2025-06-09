@@ -54,7 +54,7 @@ class GestionarArtista : AppCompatActivity() {
             } else {
                 Toast.makeText(
                     this@GestionarArtista,
-                    "El archivo seleccionado debe ser una imagen",
+                    getString(R.string.tipo_archivo_imagen),
                     Toast.LENGTH_SHORT
                 ).show()
                 return@registerForActivityResult
@@ -78,7 +78,7 @@ class GestionarArtista : AppCompatActivity() {
         btnImg = findViewById(R.id.btnGestionArtImg)
         btnIco = findViewById(R.id.btnGestionArtIco)
 
-        val datePicker = MaterialDatePicker.Builder.datePicker().setTitleText("Selecciona fecha")
+        val datePicker = MaterialDatePicker.Builder.datePicker().setTitleText(getString(R.string.selecciona_fecha))
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds()).build()
 
         btnFecha.setOnClickListener {
@@ -118,11 +118,13 @@ class GestionarArtista : AppCompatActivity() {
         btnCrear.setOnClickListener {
             val nombre = findViewById<EditText>(R.id.etGestionArtNombre).text.trim().toString()
             if (nombre.isBlank()) {
-                Toast.makeText(this@GestionarArtista, "Falta el nombre", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@GestionarArtista,
+                    getString(R.string.falta_nombre), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (fecha == null || fecha?.isBlank() == true) {
-                Toast.makeText(this@GestionarArtista, "Falta la fecha", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@GestionarArtista,
+                    getString(R.string.falta_fecha), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val artista = Artista(
@@ -144,7 +146,7 @@ class GestionarArtista : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             this@GestionarArtista,
-                            "Ha ocurrido un error al crear el artista",
+                            getString(R.string.error_crear_artista),
                             Toast.LENGTH_LONG
                         ).show()
                     }

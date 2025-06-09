@@ -14,4 +14,21 @@
     <string name="guardar_ajustes">Gardar axustes</string>
     <string name="ajustes">Axustes</string>
     <string name="fecha_seleccionada">Data seleccionada: %1$s</string>
+    <string name="error_conexion">Produciuse un erro na conexión co servizo. Desexas cambiar a URL?</string>
+    <string name="error_conexion_aceptar">Ir a axustes</string>
+    <string name="error_conexion_denegar">Saír da aplicación</string>
+    <string name="error_conexion_titulo">Erro de conexión</string>
+    <string name="cambios_guardados">Cambios gardados</string>
+    <string name="no_implementado">Non implementado</string>
+    <string name="borrar_artista_confirmacion">Estás seguro de que desexas borrar este artista?</string>
+    <string name="negacion">Non</string>
+    <string name="borrar_evento_confirmacion">Estás seguro de que desexas borrar este evento?</string>
+    <string name="evento_no_borrado">O evento non se puido borrar</string>
+    <string name="falta_nombre">Falta o nome</string>
+    <string name="falta_fecha">Falta a data</string>
+    <string name="tipo_archivo_imagen">O ficheiro seleccionado debe ser unha imaxe</string>
+    <string name="selecciona_fecha">Selecciona data</string>
+    <string name="error_crear_evento">Ocorreu un erro ó crear o evento</string>
+    <string name="error_crear_artista">Ocorreu un erro ó crear o evento</string>
+    <string name="artista_no_borrado">O artista non se puido borrar</string>
 </resources>

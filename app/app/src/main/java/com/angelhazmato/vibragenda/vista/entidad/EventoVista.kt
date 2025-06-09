@@ -55,7 +55,7 @@ class EventoVista : AppCompatActivity() {
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.favorito_toolbar -> {
-                    Toast.makeText(this@EventoVista, "No implementado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@EventoVista, getString(R.string.no_implementado), Toast.LENGTH_SHORT).show()
                     if (isFavorito) {
                         it.setIcon(R.drawable.ic_star_24px)
                         isFavorito = false
@@ -67,13 +67,13 @@ class EventoVista : AppCompatActivity() {
                 }
 
                 R.id.editar_toolbar -> {
-                    Toast.makeText(this@EventoVista, "No implementado", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@EventoVista, getString(R.string.no_implementado), Toast.LENGTH_LONG).show()
                     true
                 }
 
                 R.id.borrar_toolbar -> {
                     AlertDialog.Builder(this@EventoVista).setTitle("Borrar evento")
-                        .setMessage("¿Estás seguro que deseas borrar este evento?")
+                        .setMessage(getString(R.string.borrar_evento_confirmacion))
                         .setPositiveButton("Sí") { dialogInterface, _ ->
                             lifecycleScope.launch(Dispatchers.IO) {
                                 val borrado = ServicioApi.eliminarEvento(idEvento)
@@ -90,13 +90,13 @@ class EventoVista : AppCompatActivity() {
                                 } else {
                                     Toast.makeText(
                                         this@EventoVista,
-                                        "El evento no se ha podido borrar",
+                                        getString(R.string.evento_no_borrado),
                                         Toast.LENGTH_LONG
                                     ).show()
                                 }
                             }
 
-                        }.setNegativeButton("No") { dialogInterface, _ ->
+                        }.setNegativeButton(getString(R.string.negacion)) { dialogInterface, _ ->
                             dialogInterface.dismiss()
                         }.create().show()
                     true

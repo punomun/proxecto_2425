@@ -54,7 +54,7 @@ class GestionarEvento : AppCompatActivity() {
             } else {
                 Toast.makeText(
                     this@GestionarEvento,
-                    "El archivo seleccionado debe ser una imagen",
+                    getString(R.string.tipo_archivo_imagen),
                     Toast.LENGTH_SHORT
                 ).show()
                 return@registerForActivityResult
@@ -79,14 +79,14 @@ class GestionarEvento : AppCompatActivity() {
         btnImg = findViewById(R.id.btnGestionEveImg)
         btnIco = findViewById(R.id.btnGestionEveIco)
 
-        val datePicker = MaterialDatePicker.Builder.datePicker().setTitleText("Selecciona fecha")
+        val datePicker = MaterialDatePicker.Builder.datePicker().setTitleText(getString(R.string.selecciona_fecha))
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds()).build()
 
         btnFecha.setOnClickListener {
             datePicker.show(supportFragmentManager, "DATE_PICKER")
             datePicker.addOnPositiveButtonClickListener {
                 fecha = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date(it))
-                textViewFecha.text = "Fecha seleccionada: $fecha"
+                textViewFecha.text =getString(R.string.fecha_seleccionada, fecha)
             }
         }
 
@@ -119,7 +119,7 @@ class GestionarEvento : AppCompatActivity() {
         btnCrear.setOnClickListener {
             val nombre = findViewById<EditText>(R.id.etGestionEveNombre).text.trim().toString()
             if (nombre.isBlank()) {
-                Toast.makeText(this@GestionarEvento, "Falta el nombre", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@GestionarEvento, getString(R.string.falta_nombre), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val evento = Evento(
@@ -141,7 +141,7 @@ class GestionarEvento : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             this@GestionarEvento,
-                            "Ha ocurrido un error al crear el evento",
+                            getString(R.string.error_crear_evento),
                             Toast.LENGTH_LONG
                         ).show()
                     }
