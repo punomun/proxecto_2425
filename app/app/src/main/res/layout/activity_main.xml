@@ -5,15 +5,93 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.angelhazmato.vibragenda.vista.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btnVerEventos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Ver eventos"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerArtistas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgVwLogoOnda" />
+
+    <Button
+        android:id="@+id/btnVerArtistas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Ver artistas"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerEventos" />
+
+    <TextView
+        android:id="@+id/tvLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:fontFamily="@font/aboreto"
+        android:text="VIBRAGENDA"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@id/imgVwLogoAlbum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imgVwLogoOnda"
+        android:layout_width="169dp"
+        android:layout_height="129dp"
+        app:layout_constraintBottom_toBottomOf="@id/imgVwLogoAlbum"
+        app:layout_constraintStart_toEndOf="@+id/imgVwLogoAlbum"
+        app:layout_constraintTop_toTopOf="@id/imgVwLogoAlbum"
+        app:srcCompat="@drawable/logo_onda" />
+
+    <ImageView
+        android:id="@+id/imgVwLogoAlbum"
+        android:layout_width="169dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerEventos"
+        app:layout_constraintEnd_toStartOf="@+id/imgVwLogoOnda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogo"
+        app:srcCompat="@drawable/logo_estadio" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="80dp"
+        android:rotation="-60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgVwLogoOnda"
+        app:layout_constraintTop_toTopOf="@+id/imgVwLogoOnda"
+        app:srcCompat="@drawable/logo_nota" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="80dp"
+        android:rotation="51"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVwLogoOnda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgVwLogoOnda"
+        app:srcCompat="@drawable/logo_nota" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="96dp"
+        android:rotation="13"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVwLogoOnda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgVwLogoOnda"
+        app:layout_constraintTop_toTopOf="@+id/imgVwLogoAlbum"
+        app:srcCompat="@drawable/logo_nota" />
 </androidx.constraintlayout.widget.ConstraintLayout>
