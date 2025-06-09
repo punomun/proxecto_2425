@@ -22,6 +22,9 @@
             android:name="com.angelhazmato.vibragenda.vista.crud.GestionarEvento"
             android:exported="false" />
         <activity
+            android:name="com.angelhazmato.vibragenda.vista.AjustesVista"
+            android:exported="false" />
+        <activity
             android:name="com.angelhazmato.vibragenda.vista.crud.GestionarArtista"
             android:exported="false" />
         <activity
@@ -45,6 +48,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
