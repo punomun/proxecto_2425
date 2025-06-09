@@ -31,4 +31,6 @@
     <string name="tipo_archivo_imagen">El archivo seleccionado debe ser una imagen</string>
     <string name="selecciona_fecha">Selecciona fecha</string>
     <string name="error_crear_evento">Ha ocurrido un error al crear el evento</string>
+    <string name="artista_no_eventos">Este artista no tiene eventos confirmados</string>
+    <string name="no_hay_eventos">No hay eventos en la base de datos</string>
 </resources>

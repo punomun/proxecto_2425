@@ -31,4 +31,6 @@
     <string name="error_crear_evento">Ocorreu un erro ó crear o evento</string>
     <string name="error_crear_artista">Ocorreu un erro ó crear o evento</string>
     <string name="artista_no_borrado">O artista non se puido borrar</string>
+    <string name="artista_no_eventos">Este artista non ten eventos confirmados</string>
+    <string name="no_hay_eventos">Non hai eventos na base de datos</string>
 </resources>

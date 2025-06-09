@@ -24,8 +24,8 @@ object EventosControlador {
             else ServicioApi.obtenerEventosDeArtista(idArtista)
 
             if (listaEventos.isEmpty()) {
-                val str = if (idArtista == -1) "No hay eventos en la base de datos"
-                else "Este artista no tiene eventos confirmados"
+                val str = if (idArtista == -1) vista.getString(R.string.no_hay_eventos)
+                else vista.getString(R.string.artista_no_eventos)
                 withContext(Dispatchers.Main) {
                     Toast.makeText(vista, str, Toast.LENGTH_LONG).show()
                     vista.finish()
